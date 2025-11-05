@@ -27,4 +27,32 @@ The total minimum cost will be 275
 ```
 
 ### Welsh-Powell Algorithm
-Hi...
+Input format: first line is the number of nodes n and edges m.
+Then list the n node names (one per line).
+Then list m edges as u v cost. (Cost is ignored for coloring; it’s only kept for a consistent format with the assignment spec.)
+The Input should look like this:
+```
+5 7
+A
+B
+C
+D
+E
+A B 1
+A C 1
+B C 1
+B D 1
+C D 1
+C E 1
+D E 1
+```
+
+The Output should look like
+```
+# Welsh-Powell Coloring Result
+Total Colors Used: 3
+
+Color 1: C E 
+Color 2: B D 
+Color 3: A
+```
