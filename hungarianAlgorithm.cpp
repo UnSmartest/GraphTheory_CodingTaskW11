@@ -9,6 +9,10 @@ using namespace std;
 #include <algorithm>
 const int INF = numeric_limits<int>::max();
 
+void lineSeparator(){
+    cout << "=================================================\n";
+}
+
 int hungarianAlgorithm(vector<vector<int>> matrixOfCosts){
     int n = matrixOfCosts.size();
     vector<int> u(n + 1), v(n + 1), p(n + 1), way(n + 1);
@@ -57,6 +61,7 @@ int hungarianAlgorithm(vector<vector<int>> matrixOfCosts){
 
     int smallestCost = -v[0];
     for(int i = 1; i <= n; ++i) cout << "Bulldozer " << i << " goes to site " << assignment[i] << "\n";
+    lineSeparator();
     cout << "The total minimum cost will be " << smallestCost << "\n";
 
     return smallestCost;
@@ -64,18 +69,22 @@ int hungarianAlgorithm(vector<vector<int>> matrixOfCosts){
 
 int main() {
     int bulldozers, constructionSites;
+    lineSeparator();
     cout << "How many bulldozers & construction sites? (use space to separate both values)\n";
     cin >> bulldozers >> constructionSites;
+    lineSeparator();
 
     int n = max(bulldozers, constructionSites);
     vector<vector<int>> matrixOfCosts(n, vector<int>(n, 0));
 
-    cout << "\nEnter the cost matrix below\n";
+    cout << "Enter the cost matrix below\n";
     for (int i = 0; i < bulldozers; ++i) {
         for (int j = 0; j < constructionSites; ++j) {
             cin >> matrixOfCosts[i][j];
         }
     }
+    lineSeparator();
     hungarianAlgorithm(matrixOfCosts);
+    lineSeparator();
     return 0;
 }
